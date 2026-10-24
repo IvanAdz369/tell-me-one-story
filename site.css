@@ -1,0 +1,80 @@
+/* Tell Me One Story: the app's lamplit walnut and parchment, set for reading. */
+@font-face { font-family: Literata; font-weight: 400; font-style: normal; font-display: swap; src: url("fonts/Literata_400Regular.ttf") format("truetype"); }
+@font-face { font-family: Literata; font-weight: 400; font-style: italic; font-display: swap; src: url("fonts/Literata_400Regular_Italic.ttf") format("truetype"); }
+@font-face { font-family: Literata; font-weight: 600; font-style: normal; font-display: swap; src: url("fonts/Literata_600SemiBold.ttf") format("truetype"); }
+:root {
+  --walnut: #2e1f16;
+  --parchment: #f4e8d4;
+  --ink: #36241a;
+  --ink-muted: #7a6452;
+  --rule: #e0cfb4;
+  --ember: #b4532e;
+  --lamp: #f6c177;
+  --page: var(--parchment);
+  --text: var(--ink);
+  --muted: var(--ink-muted);
+  --link: var(--ember);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #241810;
+    --text: #efe2cc;
+    --muted: #b09a82;
+    --rule: #4e3929;
+    --link: var(--lamp);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font: 400 18px/1.65 Literata, Georgia, serif;
+}
+
+.band {
+  background: var(--walnut);
+  padding: 20px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.lockup img { display: block; width: 264px; max-width: 100%; height: auto; }
+
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 16px 56px;
+}
+
+h1 { font-weight: 600; font-size: 2rem; line-height: 1.2; margin: 0 0 0.6em; }
+h2 { font-weight: 600; font-size: 1.3rem; line-height: 1.3; margin: 2em 0 0.5em; }
+h3 { font-weight: 600; font-size: 1.1rem; margin: 1.6em 0 0.4em; }
+
+p, ul { margin: 0 0 1em; }
+ul { padding-left: 1.2em; }
+li { margin-bottom: 0.4em; }
+
+.lead { font-style: italic; font-size: 1.2rem; color: var(--muted); }
+
+.links { list-style: none; padding: 0; }
+.links li { margin-bottom: 0.8em; }
+
+a { color: var(--link); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+
+blockquote { margin: 1em 0; padding-left: 1em; border-left: 3px solid var(--rule); color: var(--muted); }
+
+footer {
+  border-top: 1px solid var(--rule);
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
